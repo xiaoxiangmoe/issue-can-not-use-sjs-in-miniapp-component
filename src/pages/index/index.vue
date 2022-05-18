@@ -2,11 +2,16 @@
 import { ref } from 'vue';
 const title = ref('Hello111233');
 </script>
+<script lang="ts">
+declare const utils: { message: string }
+</script>
+<script module="utils" lang="sjs" src="./utils.sjs"></script>
 <template>
   <view class="content">
     <image class="logo" src="/static/logo.png" />
     <view class="text-area">
       <text class="title">{{ title }}</text>
+      <text>{{ utils.message }}</text>
     </view>
   </view>
 </template>
